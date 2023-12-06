@@ -1,5 +1,5 @@
-# Nom du Projet
-Gestion d'une Entreprise
+# Projet
+Gestion d'une Entreprise Dao
 ## Description
 Ce projet vise à mettre en place un système de gestion pour une entreprise, en se concentrant sur la modélisation des données avec LOOPING et l'implémentation d'une base de données relationnelle avec le SGBD-R MySQL.
 ## Table des Matières
