@@ -1,7 +1,7 @@
 # Nom du Projet
 Gestion d'une Entreprise
 ## Description
-Ce projet vise à mettre en place un système de gestion pour une entreprise, en se concentrant sur la modélisation des données et l'implémentation d'une base de données relationnelle.
+Ce projet vise à mettre en place un système de gestion pour une entreprise, en se concentrant sur la modélisation des données avec LOOPING et l'implémentation d'une base de données relationnelle avec le SGBD-R MySQL.
 ## Table des Matières
 - [Modélisation](#partie-modélisation)
 - [Système de Gestion de Base de Données (SGBD)](#partie-système-de-gestion-de-base-de-données-sgbd)
