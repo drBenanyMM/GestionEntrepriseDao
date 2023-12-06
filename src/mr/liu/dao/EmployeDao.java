@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 
 import mr.liu.dbb.DbConnection;
@@ -75,7 +76,38 @@ public class EmployeDao implements Dao<Employe> {
 
 	@Override
 	public List<Employe> getAll() {
-		return null;
+		// 1 Reqette
+		requette = "SELECT * FROM employe;";
+		// une liste des employes
+		List<Employe> employes = new ArrayList<Employe>();
+
+		try {
+			// 2. Recuperer le resulat
+			ResultSet resultSet = statement.executeQuery(requette);
+
+			// 3. Stocker ce resultat dans la liste des employes
+
+			while (resultSet.next()) {
+
+				// 4 Recuperer l'objet employe
+				int numero = resultSet.getInt(1);
+				String nom = resultSet.getString(2);
+				String grade = resultSet.getString(3);
+				String nomDepartment = resultSet.getString(4);
+
+				employe = new Employe(numero, nom, grade, nomDepartment);
+
+				// 5 Ajouter l'objet employe dans la liste employes
+				employes.add(employe);
+			}
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+       
+		//6 Rerour de la liste des employes
+		return employes;
 	}
 
 	@Override
@@ -97,7 +129,10 @@ public class EmployeDao implements Dao<Employe> {
 	public static void main(String[] args) {
 		// Test de Select By ID
 		System.out.println("TEST DE LA METODE getById");
-		new EmployeDao().getByID(1212);
+		new EmployeDao().getByID(1212);		
+		//Test Selcet All : getAll()
+		System.out.println("TEST DE LA METODE getALL()");
+		System.out.println(new EmployeDao().getAll().toString());
 
 	}
 
